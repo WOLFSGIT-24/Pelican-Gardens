@@ -52,13 +52,28 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-white/40 font-body">
-            &copy; {new Date().getFullYear()} Pelican Gardens. All rights reserved.
-          </p>
-          <p className="text-xs text-white/40 font-body">
-            4 BHK + Home Office • Jakkur, Bangalore
-          </p>
+        <div className="border-t border-white/10 pt-6 flex flex-col gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6">
+            <a href="#disclaimer" className="text-xs font-body text-white/50 hover:text-white/80 transition-colors">
+              Terms & Conditions
+            </a>
+            <span className="text-white/20 hidden sm:inline">|</span>
+            <a href="#disclaimer" className="text-xs font-body text-white/50 hover:text-white/80 transition-colors">
+              Privacy Policy
+            </a>
+            <span className="text-white/20 hidden sm:inline">|</span>
+            <span className="text-xs font-body text-white/50">
+              Authorised Partner
+            </span>
+          </div>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-2">
+            <p className="text-xs text-white/40 font-body">
+              &copy; {new Date().getFullYear()} Pelican Gardens. All rights reserved.
+            </p>
+            <p className="text-xs text-white/40 font-body">
+              4 BHK + Home Office • Jakkur, Bangalore
+            </p>
+          </div>
         </div>
       </div>
     </footer>
