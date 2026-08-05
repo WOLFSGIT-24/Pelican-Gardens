@@ -1,0 +1,57 @@
+# Dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# Environment variables
+.env
+.env.local
+.env.production
+.env.development
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE / Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Vercel
+.vercel/
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Misc
+*.log
+.messages.json
+
+# Original source images (all formats committed)
+# public/**/*.png  ← removed, images are needed
+# public/**/*.jpg  ← removed
+# public/**/*.jpeg ← removed
+
+# Old unused folders
+public/IMAGES/
+public/Amenity/
+public/Floor\ plan/
+public/Real\ images/
+
+# Large video files
+public/*.mp4
+
+# Separate project folder
+Natures-next/

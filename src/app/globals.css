@@ -1,0 +1,336 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Typography: Cormorant Garamond (Headings — Canela fallback) ── */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('/fonts/cormorantgaramond/v21/co3ZmX5slCNuHLi8bLeY9MK7whWMhyjYrEtImSqn7B6D.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('/fonts/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYqXtKky2F7g.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* ── Typography: Inter (Body — Neue Haas Grotesk fallback) ── */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url('/fonts/nunitosans/v19/pe0AMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfUVwoNnq4CLz0_kJ3xzHGGVFM.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Nunito Sans (additional fallback) */
+@font-face {
+  font-family: 'Nunito Sans';
+  font-weight: 200 1000;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url('/fonts/nunitosans/v19/pe0OMImSLYBIv1o4X1M8cce4OdVisMz5nZRqy6cmmmU3t3NeCAAFOvV9SNjBznuBdlEl2g.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 200 1000;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url('/fonts/nunitosans/v19/pe0AMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfUVwoNnq4CLz0_kJ3xzHGGVFM.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  /* ── Brand Palette (customize per project) ── */
+  --primary:        #1A1F2E;   /* Deep Charcoal Navy  */
+  --secondary:      #2C3654;   /* Rich Indigo         */
+  --accent:         #B08D57;   /* Premium Gold        */
+  --accent-light:   #D4AF78;   /* Light Gold          */
+  --brand-bg:       #F9F7F4;   /* Warm Ivory          */
+  --brand-alt:      #F0EDE8;   /* Lighter Ivory       */
+  --dark-bg:        #0F1420;   /* Near Black          */
+  --ink:            #1A1F2E;   /* Deep text           */
+  --muted:          #5C5F6B;   /* Muted body text     */
+  --border:         #E2DDD6;   /* Warm grey border    */
+  --white:          #FFFFFF;
+  --gradient-start: #B08D57;   /* Gold start          */
+  --gradient-end:   #D4AF78;   /* Gold end            */
+
+  /* ── Section spacing ─────────────────────── */
+  --section-y:      clamp(50px, 5.5vw, 80px);
+
+  /* ── Typography ──────────────────────────── */
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Inter', 'Nunito Sans', system-ui, sans-serif;
+  --font-stats:   'Space Grotesk', 'Inter', system-ui, sans-serif;
+
+  /* ── Radius ───────────────────────────────── */
+  --radius-card:  24px;
+  --radius-img:   20px;
+  --radius-pill:  999px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--brand-bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html { scroll-behavior: smooth; }
+
+/* Prevent horizontal overflow on all elements */
+*, *::before, *::after {
+  max-width: 100%;
+}
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+::selection {
+  background-color: rgba(176, 141, 87, 0.18);
+  color: var(--primary);
+}
+
+/* ── Number rendering ─────────────────────── */
+* {
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "lnum" 1, "tnum" 1;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-variant-numeric: lining-nums;
+}
+
+/* ─────────────────────────────────────────────
+   BUTTONS
+───────────────────────────────────────────── */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  color: #fff;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn-gold:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 36px rgba(176, 141, 87, 0.38);
+}
+.btn-gold:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.btn-gold:active {
+  transform: translateY(0);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--accent);
+  border: 1.5px solid var(--accent);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn-outline:hover {
+  background: rgba(176, 141, 87, 0.08);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(176, 141, 87, 0.15);
+}
+.btn-outline:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Glass outline (for hero dark bg) */
+.btn-glass {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.75);
+  transform: translateY(-1px);
+}
+.btn-glass:focus-visible {
+  outline: 2px solid rgba(255,255,255,0.6);
+  outline-offset: 3px;
+}
+
+/* ─────────────────────────────────────────────
+   CARDS
+───────────────────────────────────────────── */
+.card-brand {
+  background: var(--white);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 20px rgba(26, 31, 46, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-brand:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(26, 31, 46, 0.10);
+}
+
+/* ─────────────────────────────────────────────
+   IMAGES
+───────────────────────────────────────────── */
+.img-hover-zoom {
+  overflow: hidden;
+  border-radius: var(--radius-img);
+}
+.img-hover-zoom img {
+  transition: transform 0.5s ease;
+}
+.img-hover-zoom:hover img {
+  transform: scale(1.04);
+}
+
+/* ─────────────────────────────────────────────
+   DIVIDERS & DECORATIVE
+───────────────────────────────────────────── */
+.divider-gold {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(to right, var(--accent), var(--accent-light));
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.section-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ─────────────────────────────────────────────
+   GRADIENT TEXT
+───────────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─────────────────────────────────────────────
+   GLASS CARD (dark backgrounds)
+───────────────────────────────────────────── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(176, 141, 87, 0.18);
+  border-radius: var(--radius-card);
+}
+
+/* ─────────────────────────────────────────────
+   FORM INPUTS
+───────────────────────────────────────────── */
+.input-premium {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid var(--border);
+  padding: 0.75rem 0;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.3s ease;
+  caret-color: var(--accent);
+}
+.input-premium::placeholder { color: #999; }
+.input-premium:focus { border-bottom-color: var(--accent); }
+
+/* ─────────────────────────────────────────────
+   SECTION HEADING PATTERN
+───────────────────────────────────────────── */
+.section-header {
+  text-align: center;
+  margin-bottom: clamp(32px, 4vw, 52px);
+}
+
+/* ─────────────────────────────────────────────
+   SKELETON SHIMMER (Phase 1 placeholder only)
+───────────────────────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -600px 0; }
+  100% { background-position:  600px 0; }
+}
+.shimmer {
+  background: linear-gradient(90deg, #E2DDD6 25%, #F0EDE8 50%, #E2DDD6 75%);
+  background-size: 1200px 100%;
+  animation: shimmer 1.6s infinite linear;
+  border-radius: 4px;
+}
+
+/* ─────────────────────────────────────────────
+   SAFE AREA (iPhone notch / home indicator)
+───────────────────────────────────────────── */
+.safe-area-pb {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* ─────────────────────────────────────────────
+   SCROLL OFFSET for sticky header
+───────────────────────────────────────────── */
+[id] {
+  scroll-margin-top: 80px;
+}
