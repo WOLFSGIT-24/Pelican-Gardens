@@ -47,7 +47,7 @@ export default function Header() {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="tel:+919999999999"
+              href="tel:+917338116616"
               className="inline-flex items-center gap-2 text-sm font-body font-medium text-[var(--muted)] hover:text-[var(--accent)] transition-colors"
               aria-label="Call us"
             >
@@ -97,7 +97,7 @@ export default function Header() {
               ))}
               <div className="mt-6 pt-6 border-t border-[var(--border)] flex flex-col gap-3">
                 <a
-                  href="tel:+919999999999"
+                  href="tel:+917338116616"
                   className="btn-outline px-6 py-3 text-center"
                 >
                   Call Now

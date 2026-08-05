@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer, staggerChild } from "@/lib/motion";
 import { useModalStore } from "@/store/enquiryStore";
-import { FileText } from "lucide-react";
+import { Lock } from "lucide-react";
 
 const floorPlanTypes = [
   { config: "Type A", area: "~4,450 sq.ft.", price: "₹10.2 Cr onwards" },
@@ -44,13 +44,25 @@ export default function FloorPlans() {
               variants={staggerChild}
               className="card-brand overflow-hidden group"
             >
-              {/* Floor Plan Image Placeholder */}
-              <div className="aspect-[3/4] bg-[var(--brand-alt)] flex items-center justify-center border-b border-[var(--border)]">
-                <div className="text-center text-[var(--muted)]">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 rounded-lg bg-white flex items-center justify-center shadow-sm">
-                    <FileText className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--accent)]" strokeWidth={1.5} />
+              {/* Floor Plan Image — Blurred & Locked */}
+              <div className="aspect-[3/4] relative overflow-hidden border-b border-[var(--border)]">
+                <img
+                  src="/imgi_72_floorplan-1bhk.webp"
+                  alt="Floor plan locked"
+                  className="w-full h-full object-contain blur-[6px] scale-105"
+                  loading="lazy"
+                />
+                {/* Lock Overlay */}
+                <div
+                  className="absolute inset-0 bg-white/60 backdrop-blur-[2px] flex flex-col items-center justify-center gap-2 cursor-pointer"
+                  onClick={openModal}
+                >
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[var(--primary)]/90 flex items-center justify-center">
+                    <Lock className="w-4 h-4 sm:w-5 sm:h-5 text-white" strokeWidth={2} />
                   </div>
-                  <p className="text-[10px] sm:text-xs font-body">[Floor Plan Image]</p>
+                  <span className="text-[10px] sm:text-xs font-body font-semibold text-[var(--ink)] text-center px-2">
+                    Enquire to Unlock
+                  </span>
                 </div>
               </div>
 
@@ -66,7 +78,7 @@ export default function FloorPlans() {
                   onClick={openModal}
                   className="mt-3 sm:mt-4 w-full btn-outline px-3 sm:px-4 py-2 sm:py-2.5 text-[10px] sm:text-xs min-h-[40px]"
                 >
-                  Download Plan
+                  Unlock Floor Plan
                 </button>
               </div>
             </motion.div>

@@ -73,7 +73,7 @@ export default function Hero() {
               Schedule Visit
             </button>
             <a
-              href="tel:+919999999999"
+              href="tel:+917338116616"
               className="btn-glass px-5 sm:px-7 py-3 sm:py-3.5 text-xs sm:text-sm min-h-[44px] sm:min-h-[48px] text-center"
             >
               Request Price

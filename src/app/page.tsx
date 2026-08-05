@@ -15,6 +15,7 @@ import DeveloperProfile from "@/components/sections/DeveloperProfile";
 import FAQs from "@/components/sections/FAQs";
 import Disclaimer from "@/components/sections/Disclaimer";
 import EnquiryModal from "@/components/ui/EnquiryModal";
+import WhatsAppButton from "@/components/ui/WhatsAppButton";
 
 export default function Home() {
   return (
@@ -64,6 +65,9 @@ export default function Home() {
 
       {/* Enquiry Modal */}
       <EnquiryModal />
+
+      {/* WhatsApp Button */}
+      <WhatsAppButton />
     </div>
   );
 }

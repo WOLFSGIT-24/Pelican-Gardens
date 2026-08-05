@@ -87,8 +87,8 @@ export default function AuthorisedPartnerPage() {
               For any queries regarding our partnership or the project, please reach out:
             </p>
             <p className="mt-2">
-              <strong className="text-[var(--ink)]">Email:</strong> info@pelicangardens.in<br />
-              <strong className="text-[var(--ink)]">Phone:</strong> +91 99999 99999<br />
+              <strong className="text-[var(--ink)]">Email:</strong> hello@therealconnect.co.in<br />
+              <strong className="text-[var(--ink)]">Phone:</strong> +91 73381 16616<br />
               <strong className="text-[var(--ink)]">Location:</strong> Jakkur, North Bangalore, Karnataka
             </p>
           </section>
