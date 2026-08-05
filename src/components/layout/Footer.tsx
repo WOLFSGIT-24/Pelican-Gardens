@@ -54,17 +54,17 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-6 flex flex-col gap-4">
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6">
-            <a href="#disclaimer" className="text-xs font-body text-white/50 hover:text-white/80 transition-colors">
+            <a href="/terms" className="text-xs font-body text-white/50 hover:text-white/80 transition-colors">
               Terms & Conditions
             </a>
             <span className="text-white/20 hidden sm:inline">|</span>
-            <a href="#disclaimer" className="text-xs font-body text-white/50 hover:text-white/80 transition-colors">
+            <a href="/privacy" className="text-xs font-body text-white/50 hover:text-white/80 transition-colors">
               Privacy Policy
             </a>
             <span className="text-white/20 hidden sm:inline">|</span>
-            <span className="text-xs font-body text-white/50">
+            <a href="/authorised-partner" className="text-xs font-body text-white/50 hover:text-white/80 transition-colors">
               Authorised Partner
-            </span>
+            </a>
           </div>
           <div className="flex flex-col sm:flex-row items-center justify-between gap-2">
             <p className="text-xs text-white/40 font-body">
