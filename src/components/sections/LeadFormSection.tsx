@@ -128,13 +128,14 @@ export default function LeadFormSection({ id }: LeadFormSectionProps) {
                         aria-label="Mobile Number"
                       />
                     </div>
-                    {/* Email (Optional) */}
+                    {/* Email */}
                     <div>
                       <input
                         type="email"
-                        placeholder="Email (Optional)"
+                        placeholder="Email Address"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                        required
                         className="w-full bg-transparent border-b border-white/20 py-3 text-white font-body text-sm outline-none placeholder:text-white/40 focus:border-[var(--accent)] transition-colors"
                         aria-label="Email Address"
                       />

@@ -1,6 +1,5 @@
 // ─────────────────────────────────────────────────────────────
-//  Lead Submission via Webhook
-//  Replace WEBHOOK_URL with your Make/Zapier/custom endpoint
+//  Lead Submission via Webhook (Make.com)
 // ─────────────────────────────────────────────────────────────
 const WEBHOOK_URL = "https://hook.us1.make.com/t45ytgy3n7e31iwuvvsmwsm443olvoid";
 
@@ -43,9 +42,40 @@ export async function submitToSheet(data: LeadData): Promise<void> {
     message: (data.message || "").trim(),
   };
 
-  await fetch(WEBHOOK_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
-  });
+  // Use text/plain content type to avoid CORS preflight
+  // Make.com still parses JSON from the body
+  try {
+    await fetch(WEBHOOK_URL, {
+      method: "POST",
+      headers: { "Content-Type": "text/plain" },
+      body: JSON.stringify(payload),
+    });
+  } catch {
+    // Fallback: submit via hidden iframe to bypass CORS entirely
+    const iframe = document.createElement("iframe");
+    iframe.name = "lead_submit_frame";
+    iframe.style.display = "none";
+    document.body.appendChild(iframe);
+
+    const form = document.createElement("form");
+    form.method = "POST";
+    form.action = WEBHOOK_URL;
+    form.target = "lead_submit_frame";
+
+    Object.entries(payload).forEach(([key, value]) => {
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = key;
+      input.value = value;
+      form.appendChild(input);
+    });
+
+    document.body.appendChild(form);
+    form.submit();
+
+    setTimeout(() => {
+      document.body.removeChild(form);
+      document.body.removeChild(iframe);
+    }, 3000);
+  }
 }

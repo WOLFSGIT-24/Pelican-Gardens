@@ -88,13 +88,14 @@ export default function EnquiryModal() {
               />
             </div>
 
-            {/* Email (Optional) */}
+            {/* Email */}
             <div>
               <input
                 type="email"
-                placeholder="Email (Optional)"
+                placeholder="Email Address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                required
                 className="input-premium"
                 aria-label="Email Address"
               />
