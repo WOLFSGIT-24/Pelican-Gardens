@@ -42,13 +42,18 @@ export async function submitToSheet(data: LeadData): Promise<void> {
     message: (data.message || "").trim(),
   };
 
-  // Use text/plain content type to avoid CORS preflight
-  // Make.com still parses JSON from the body
+  // Send as form-encoded data — avoids CORS preflight and
+  // Make.com parses each field separately
+  const formBody = new URLSearchParams();
+  Object.entries(payload).forEach(([key, value]) => {
+    formBody.append(key, value);
+  });
+
   try {
     await fetch(WEBHOOK_URL, {
       method: "POST",
-      headers: { "Content-Type": "text/plain" },
-      body: JSON.stringify(payload),
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: formBody.toString(),
     });
   } catch {
     // Fallback: submit via hidden iframe to bypass CORS entirely
