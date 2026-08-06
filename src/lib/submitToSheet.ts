@@ -2,7 +2,7 @@
 //  Lead Submission via Webhook
 //  Replace WEBHOOK_URL with your Make/Zapier/custom endpoint
 // ─────────────────────────────────────────────────────────────
-const WEBHOOK_URL = ""; // TODO: Add your webhook URL
+const WEBHOOK_URL = "https://hook.us1.make.com/t45ytgy3n7e31iwuvvsmwsm443olvoid";
 
 export interface LeadData {
   name: string;
