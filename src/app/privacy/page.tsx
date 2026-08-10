@@ -97,7 +97,7 @@ export default function PrivacyPage() {
               <li>Opt out of marketing communications at any time</li>
             </ul>
             <p className="mt-3">
-              To exercise any of these rights, please contact us at hello@therealconnect.co.in.
+              To exercise any of these rights, please contact us at preciousfortune11426@gmail.com.
             </p>
           </section>
 
@@ -121,8 +121,8 @@ export default function PrivacyPage() {
               If you have any questions about this Privacy Policy, please contact us at:
             </p>
             <p className="mt-2">
-              <strong className="text-[var(--ink)]">Email:</strong> hello@therealconnect.co.in<br />
-              <strong className="text-[var(--ink)]">Phone:</strong> +91 73381 16616<br />
+              <strong className="text-[var(--ink)]">Email:</strong> preciousfortune11426@gmail.com<br />
+              <strong className="text-[var(--ink)]">Phone:</strong> +91 84040 25050<br />
               <strong className="text-[var(--ink)]">Location:</strong> Jakkur, North Bangalore, Karnataka
             </p>
           </section>

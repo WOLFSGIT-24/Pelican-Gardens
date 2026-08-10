@@ -41,11 +41,11 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[var(--accent)]" />
-                <a href="tel:+917338116616" className="text-sm font-body text-white/70 hover:text-white transition-colors">+91 73381 16616</a>
+                <a href="tel:+918404025050" className="text-sm font-body text-white/70 hover:text-white transition-colors">+91 84040 25050</a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-[var(--accent)]" />
-                <a href="mailto:hello@therealconnect.co.in" className="text-sm font-body text-white/70 hover:text-white transition-colors">hello@therealconnect.co.in</a>
+                <a href="mailto:preciousfortune11426@gmail.com" className="text-sm font-body text-white/70 hover:text-white transition-colors">preciousfortune11426@gmail.com</a>
               </li>
             </ul>
           </div>
